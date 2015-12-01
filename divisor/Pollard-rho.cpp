@@ -94,15 +94,21 @@ void rho(LL n)
             y = x, k <<= 1;
     }
 }
+#ifdef WIN32
+#define ll "%I64d"
+#else
+#define ll "%lld"
+#endif
 int main()
 {
-	LL n;
-	std::cin >> n;
+	LL x;
+	scanf(ll, n);
 	srand(time(0));
 	rho(n);
 	std::sort(yz + 1, yz + cnt + 1);
 	for(int i = 1; i <= cnt; i ++)
-		if(yz[i] != 1 && yz[i] != yz[i - 1]) std::cout << yz[i] << ' ';
+		if(yz[i] != 1 && yz[i] != yz[i - 1])
+			printf(ll" ", yz[i]);
 	puts("");
 }
 	
