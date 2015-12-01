@@ -28,7 +28,7 @@ LL ksm(LL b, LL p, LL mod)		//return (b ^ p) % mod
 
 LL gcd(LL a, LL b)
 {
-	r = a % b;
+	LL r = a % b;
 	while(r){
 		a = b; b = r; r = a % b;
 	}
