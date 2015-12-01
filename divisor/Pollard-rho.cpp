@@ -103,8 +103,8 @@ void rho(LL n)		//pollard-rho
 int main()
 {
 	srand(time(0));
-	LL x;
-	scanf(ll, x);
+	LL n;
+	scanf(ll, &n);
 	rho(n);
 	std::sort(yz + 1, yz + cnt + 1);
 	for(int i = 1; i <= cnt; i ++)
@@ -112,4 +112,3 @@ int main()
 			printf(ll" ", yz[i]);
 	puts("");
 }
-	
