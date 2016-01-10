@@ -1,9 +1,11 @@
+#define REP(i, x, y) for(int i = x, _ = y; i <= _; i ++)
 template <typename T> bool Chkmin(T &x, T y){ return y < x? (x = y, true) : false; }
 template <typename T> bool Chkmax(T &x, T y){ return y > x? (x = y, true) : false; }
-const int oo = 0x3f3f3f3f;
+const int oo = 0x3f3f3f3f, MAXM = 100000, MAXN = 1000;
 int next[MAXM], val[MAXM], to[MAXM];
-int S[MAXN], T[MAXN], slack[MAXN], head[MAXN];
-int cur;
+int S[MAXN], T[MAXN], slack[MAXN], head[MAXN], link[MAXN];
+int Lx[MAXN], Ly[MAXN];
+int cur, n;
 bool Match(int u)
 {
 	int v, w, t;
@@ -16,7 +18,7 @@ bool Match(int u)
 		if(t > 0) Chkmin(slack[v], t);
 		else{
 			T[v] = cur;
-			if(!link[v] || Match(link[v]){
+			if(!link[v] || Match(link[v])){
 				link[v] = u;
 				return true;
 			}
@@ -46,6 +48,10 @@ int main()
 			Chkmax(Lx[u], val[i]);
 	}
 	REP(i, 1, n){
-		
+		cur ++;
+		while(!Match(i)){
+			Update();
+			cur ++;
+		}
 	}
 }
